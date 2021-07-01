@@ -7,7 +7,7 @@ The purpose of this repository is to provide a simplistic dbt project that can b
 [dbt](https://www.getdbt.com/) is a (great) tool for transforming data that has been loaded to a database. Here I use the command line version, which is open source.
 
 # Setup
-1. [Install python](https://www.python.org/downloads/) (I used version 3.9.6)
+1. [Install python](https://www.python.org/downloads/): I used version 3.8.10 as there currently appears to be an issue with dbt installation when using 3.9.* versions.
 2. Clone this repository
 3. Create and activate a python virtual environment
     

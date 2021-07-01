@@ -1,0 +1,15 @@
+name: "dbt_orchestration"
+version: "1.0.0"
+config-version: 2
+
+profile: "development"
+
+source-paths: "models"
+target-path: "target"
+clean-targets:
+    - "target"
+    - "dbt_modules"
+
+models:
+  dbt_orchestration:
+    materialized: view
