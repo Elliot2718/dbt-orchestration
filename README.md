@@ -2,7 +2,7 @@
 Simple dbt project for testing out orchestration tools
 
 # About
-The purpose of this repository is to provide a simple dbt project that can be used for testing out orchestration tools like airflow, prefect and dagster. These orchestration tools do not inherently have anything to do with dbt, but I am interested in how they work with it.
+The purpose of this repository is to provide a simple dbt project that can be used for testing out data pipeline orchestration tools like airflow, prefect and dagster. These tools do not inherently have anything to do with dbt, but I am interested in how they work with it.
 
 [dbt](https://www.getdbt.com/) is a (great) tool for managing transformations on data that has been loaded to a database. Here I use the command line version, which is open source.
 
@@ -17,7 +17,7 @@ dbt has adaptors for [most common databases](https://docs.getdbt.com/docs/availa
 
 ### Local 
 1. [Install python](https://www.python.org/downloads/): I used version 3.8.10 as there currently appears to be an issue with dbt installation when using 3.9.* versions.
-2. Clone this repository
+2. Clone this repository.
 3. Create and activate a python virtual environment and install requirements:
 
         python -m venv env
@@ -46,12 +46,14 @@ dbt has adaptors for [most common databases](https://docs.getdbt.com/docs/availa
     Update the `project` to match your Google Cloud Platform project id.
 
 # Orchestration tests
-We will create a two step data pipeline:
-1. Create a view in BigQuery off of the Iowa Liquor Sales dataset
-2. Run tests on that view
+I created a two step data pipeline:
+1. Create a view in BigQuery off of the Iowa Liquor Sales dataset.
+2. Run tests on that view.
 
-## Manual orchestration
-The simplest way to orchestrate the dbt CLI is to do it manually! 😊 But even when using another tool, it is also a good way to test things out.
+What follow are demonstrations of different ways that this data pipeline can be run.
+
+## Manual
+The simplest way to orchestrate the dbt CLI is to do it manually! 😊 But even when using another tool, it is  a good way to test things out.
 
 ### 1. Create a view
 This is as simple as running the `dbt run` command. Check your project in BigQuery; under your project you should see a new dataset named `iowa-liquor-sales` and a view named `sales_by_year_month_product`.
