@@ -1,1 +1,4 @@
+dbt_modules/
 env/
+logs/
+target/
