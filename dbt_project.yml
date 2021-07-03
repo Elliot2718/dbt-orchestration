@@ -2,9 +2,8 @@ name: "dbt_orchestration"
 version: "1.0.0"
 config-version: 2
 
-profile: "development"
+profile: "bigquery"
 
-source-paths: "models"
 target-path: "target"
 clean-targets:
     - "target"
@@ -12,4 +11,6 @@ clean-targets:
 
 models:
   dbt_orchestration:
-    materialized: view
+    iowa_liquor_sales:
+      schema: iowa_liquor_sales
+      materialized: view
