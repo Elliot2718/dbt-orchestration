@@ -1,4 +1,6 @@
-with sales as (select * from `bigquery-public-data.iowa_liquor_sales.sales`),
+with sales as (
+    select * from {{ source('iowa_liquor_retail_sales', 'sales') }}
+),
 
 totals as (
     select
@@ -6,7 +8,7 @@ totals as (
         extract(month from date) as month_of_purchase,
         item_description,
         round(sum(volume_sold_gallons), 2) as gallons_purchased
-    from
+    from sales
     group by 1, 2, 3
 )
 

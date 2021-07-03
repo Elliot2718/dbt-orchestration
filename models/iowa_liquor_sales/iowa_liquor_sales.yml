@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: iowa_liquor_retail_sales
+    description: >
+      Wholesale purchases of liquor in the state of Iowa by retails for sale to
+      individuals since 1/1/2012. Available as a public dataset in Google Cloud
+      Platform. More information about this dataset here:
+
+      https://console.cloud.google.com/marketplace/product/iowa-department-of-commerce/iowa-liquor-sales
+    database: bigquery-public-data
+    schema: iowa_liquor_sales
+
+    tables:
+      - name: sales
+
+models:
+  - name: sales_by_year_month_product
+    description: >
+      Aggregated sales (in gallons) by year, month and product description.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - year_of_purchase
+            - month_of_purchase
+            - item_description
+    columns:
+      - name: year_of_purchase
+        description: Integer year from the date field.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 2012"
+      - name: month_of_purchase
+        description: Integer month from the data field.
+        tests:
+          - not_null
+      - name: item_description
+        description: Description of the liquor product.
+      - name: gallons_purchased
+        description: The number of gallons purchased, rounded to two decimals.
