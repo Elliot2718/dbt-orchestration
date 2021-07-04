@@ -15,7 +15,7 @@ This project uses BigQuery as the database that dbt deploys a view to, under a p
 
 ## Tool Selection
 - Text-based (code or configuration) data pipeline definitions
-- Open source or "open core" model
+- Open source, "open core" or SAAS model
 - Support for multiple types of databases
 
 ## Evaluation
@@ -90,3 +90,12 @@ Monitoring | ⭐⭐  | Since you run it manually, you literally have someone mon
 
 _**Takeaway**: Not a scalable solution, but a great way to test out commands._
 
+## Github Actions
+
+## Azure DevOps Pipelines
+
+## Airflow
+
+## Prefect
+
+## Dagster
