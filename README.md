@@ -91,11 +91,6 @@ Monitoring | ⭐⭐  | Since you run it manually, you literally have someone mon
 
 _**Takeaway**: Not a scalable solution, but a great way to test out commands._
 
-## Github Actions
-Github actions is a workflow automation tool. Since we are deploying a simple pipeline, we can run the same commands we did above
-
-## Azure DevOps Pipelines
-
 ## Airflow
 
 ## Prefect
