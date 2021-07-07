@@ -50,6 +50,7 @@ The simplest way to orchestrate the dbt CLI is to do it manually! 😊 But even 
         .\env\Scripts\activate
         pip install -r requirements.txt
         dbt deps
+
 4. Add a `profiles.yml` file to the `~/.dbt/` directory. This defines the database and authentication method for dbt. To help find this directory you can run the command `dbt debug --config-dir`. The profiles file should contain this:
 
     ```yml
@@ -91,6 +92,7 @@ Monitoring | ⭐⭐  | Since you run it manually, you literally have someone mon
 _**Takeaway**: Not a scalable solution, but a great way to test out commands._
 
 ## Github Actions
+Github actions is a workflow automation tool. Since we are deploying a simple pipeline, we can run the same commands we did above
 
 ## Azure DevOps Pipelines
 
