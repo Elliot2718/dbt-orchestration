@@ -12,5 +12,6 @@ clean-targets:
 models:
   dbt_orchestration:
     iowa_liquor_sales:
+      +hours_to_expiration: 6
       schema: iowa_liquor_sales
       materialized: view
