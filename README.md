@@ -14,6 +14,7 @@ This project uses BigQuery as the database that dbt deploys a view to, under a p
 # Tool selection and evaluation
 
 ## Tool Selection
+My criteria:
 - Text-based (code or configuration) data pipeline definitions
 - Open source, "open core" or SAAS model
 - Support for multiple types of databases
@@ -91,8 +92,33 @@ Monitoring | ⭐⭐  | Since you run it manually, you literally have someone mon
 
 _**Takeaway**: Not a scalable solution, but a great way to test out commands._
 
-## Airflow
-
-## Prefect
-
 ## Dagster
+### Setup
+Rollow the same setup steps for the manual method above.
+
+### Pipeline Definition
+The pipeline is defined in the [dbt_test.py](./dagster/dbt_test.py) file. A `dbt_cli_resource` is created and a "solid" is defined as a function that runs dbt by calling the `run` method. A second solid is created to run the dbt tests, dependent on the first solid. Finally a pipeline is defined as running these two solids.
+
+### Running the pipeline
+dagster can be run via the cli, via dagit (a UI) or via an api, which allows you to script it. I tried running via the cli and dagit.
+
+#### cli
+To run via the cli:
+
+    dagster pipeline execute -f dagster_run_dbt.py
+
+#### dagit
+To run via dagit:
+
+    dagit -f dagster_run_dbt.py
+
+### Evaluation
+| Category | Rating | Comments
+-- | -- | --
+Configuration | ⭐⭐ | Having never used dagster before, it took some reading to understand the basics, but they provided an example, so it was fairly easy to get up and running.
+Documentation | ⭐⭐⭐ | dagster is fairly new, so there doesn't seem to be an excess of documentation and examples available, but enough to get going.
+Scalability | ⭐⭐⭐⭐| I think this could scale well.
+User Experience | ⭐⭐⭐⭐| Having options for both the cli and the dagit UI is nice.
+Monitoring | ⭐⭐⭐ | I didn't dig into monitoring possibilities too much, but it seems to offer a lot of flexibility.
+
+_**Takeaway**: I'd like to learn more about dagster! It seems like a promising tool, but would need to learn more about before using it with dbt._
