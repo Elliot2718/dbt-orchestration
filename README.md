@@ -94,10 +94,10 @@ _**Takeaway**: Not a scalable solution, but a great way to test out commands._
 
 ## Dagster
 ### Setup
-Rollow the same setup steps for the manual method above.
+Follow the same setup steps for the manual method above.
 
 ### Pipeline Definition
-The pipeline is defined in the [dbt_test.py](./dagster/dbt_test.py) file. A `dbt_cli_resource` is created and a "solid" is defined as a function that runs dbt by calling the `run` method. A second solid is created to run the dbt tests, dependent on the first solid. Finally a pipeline is defined as running these two solids.
+The pipeline is defined in the [dagster_run_dbt.py](dagster_run_dbt.py) file. A `dbt_cli_resource` is created and a "solid" is defined as a function that runs dbt by calling the `run` method. A second solid is created to run the dbt tests, dependent on the first solid. Finally a pipeline is defined as running these two solids.
 
 ### Running the pipeline
 dagster can be run via the cli, via dagit (a UI) or via an api, which allows you to script it. I tried running via the cli and dagit.
