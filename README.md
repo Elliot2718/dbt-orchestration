@@ -115,7 +115,7 @@ To run via dagit:
 ### Evaluation
 | Category | Rating | Comments
 -- | -- | --
-Configuration | ⭐⭐ | Having never used dagster before, it took some reading to understand the basics, but they provided an example, so it was fairly easy to get up and running.
+Configuration | ⭐⭐⭐ | Having never used dagster before, it took some reading to understand the basics, but they provided an example, so it was fairly easy to get up and running.
 Documentation | ⭐⭐⭐ | dagster is fairly new, so there doesn't seem to be an excess of documentation and examples available, but enough to get going.
 Scalability | ⭐⭐⭐⭐| I think this could scale well.
 User Experience | ⭐⭐⭐⭐| Having options for both the cli and the dagit UI is nice.
